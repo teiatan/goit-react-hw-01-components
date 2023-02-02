@@ -1,8 +1,6 @@
 import React from 'react';
 
-export function Profile(props) {
-
-    const { username, tag, location, avatar, stats} = props;
+export function Profile({ username, tag, location, avatar, stats}) {
 
     return (
       <div className="profile">
