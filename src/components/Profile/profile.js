@@ -1,7 +1,7 @@
 import React from 'react';
 
 export function Profile({ 
-    username = 'anonymous', 
+    username = 'Anonymous', 
     tag, 
     location, 
     avatar = 'https://cdn-icons-png.flaticon.com/512/1077/1077012.png',
