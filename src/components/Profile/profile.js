@@ -1,6 +1,13 @@
 import React from 'react';
 
-export function Profile({ username, tag, location, avatar, stats}) {
+export function Profile({ 
+    username = 'anonymous', 
+    tag, 
+    location, 
+    avatar = 'https://cdn-icons-png.flaticon.com/512/1077/1077012.png',
+    followers = 0,
+    views = 0,
+    likes = 0}) {
 
     return (
       <div className="profile">
@@ -11,22 +18,22 @@ export function Profile({ username, tag, location, avatar, stats}) {
         className="avatar"
       />
       <p className="name">{username}</p>
-      <p className="tag">{tag}</p>
+      <p className="tag">@{tag}</p>
       <p className="location">{location}</p>
     </div>
   
     <ul className="stats">
       <li>
         <span className="label">Followers</span>
-        <span className="quantity">{stats.followers}</span>
+        <span className="quantity">{followers}</span>
       </li>
       <li>
         <span className="label">Views</span>
-        <span className="quantity">{stats.views}</span>
+        <span className="quantity">{views}</span>
       </li>
       <li>
         <span className="label">Likes</span>
-        <span className="quantity">{stats.likes}</span>
+        <span className="quantity">{likes}</span>
       </li>
     </ul>
   </div>
