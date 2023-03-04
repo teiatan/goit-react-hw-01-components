@@ -33,7 +33,10 @@ function StatisticItems({label, percentage = 0}) {
 Statistics.propTypes = {
  title: PropTypes.string,
  stats: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string.isRequired,
+    id: PropTypes.oneOfType([
+        PropTypes.string.isRequired,
+        PropTypes.number.isRequired,
+        ]),
     }),
 ),
 };

@@ -49,8 +49,12 @@ function TransactionItem({
 
 TransactionHistory.propTypes = {
     items: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.string.isRequired,
-    })),
+        id: PropTypes.oneOfType([
+            PropTypes.string.isRequired,
+            PropTypes.number.isRequired,
+            ]),
+        }),
+    ),
 };
 
 TransactionItem.propTypes = {
