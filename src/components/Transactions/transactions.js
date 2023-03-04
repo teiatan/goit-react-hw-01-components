@@ -52,10 +52,10 @@ TransactionHistory.propTypes = {
 };
 
 TransactionItem.propTypes = {
-    type: PropTypes.string,
+    type: PropTypes.string.isRequired,
     amount: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number,
+        PropTypes.string.isRequired,
+        PropTypes.number.isRequired,
     ]),
-    currency: PropTypes.string,
+    currency: PropTypes.string.isRequired,
 }
