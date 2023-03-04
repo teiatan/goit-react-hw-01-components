@@ -1,21 +1,23 @@
 import PropTypes from 'prop-types';
 
-export const Statistics = ({
+export function Statistics({
     title = "Upload stats",
     stats,
-}) => (
-    <section className="statistics">
-        <h2 className="title">{title}</h2>
-        <ul className="stat-list">
-        {stats.map(({ id, label, percentage }) => {
-        return (
-          <StatisticItems key={id} label={label} percentage={percentage} />
-        );
-      })}
-        </ul>
-    </section>
+}) {
+    return (
+        <section className="statistics">
+            <h2 className="title">{title}</h2>
+            <ul className="stat-list">
+            {stats.map(({ id, label, percentage }) => {
+            return (
+              <StatisticItems key={id} label={label} percentage={percentage} />
+            );
+          })}
+            </ul>
+        </section>
+    );
 
-);
+}; 
 
 function StatisticItems({label, percentage = 0}) {
     return (
