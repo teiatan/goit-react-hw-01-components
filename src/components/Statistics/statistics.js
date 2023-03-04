@@ -10,7 +10,9 @@ export function Statistics({
             <ul className="stat-list">
             {stats.map(({ id, label, percentage }) => {
             return (
-              <StatisticItems key={id} label={label} percentage={percentage} />
+                <li className="item" key={id}>
+                    <StatisticItems label={label} percentage={percentage} />
+                </li>
             );
           })}
             </ul>
@@ -21,10 +23,10 @@ export function Statistics({
 
 function StatisticItems({label, percentage = 0}) {
     return (
-        <li className="item">
+        <>
             <span className="label">{label}</span>
             <span className="percentage">{percentage}%</span>
-        </li>
+        </>
     );
 };
 
