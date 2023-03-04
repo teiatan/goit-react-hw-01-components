@@ -28,7 +28,7 @@ function StatisticItems({label, percentage = 0}) {
 
 StatisticsList.propTypes = {
  title: PropTypes.string,
- data: PropTypes.array,
+ data: PropTypes.arrayOf(PropTypes.object),
 };
 
 StatisticItems.propTypes = {
