@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 
 export const StatisticsList = ({
     title = "Upload stats",
@@ -9,7 +9,7 @@ export const StatisticsList = ({
         <ul className="stat-list">
         {data.map(({ id, label, percentage }) => {
         return (
-          <StatisticItems id={id} label={label} percentage={percentage} />
+          <StatisticItems key={id} label={label} percentage={percentage} />
         );
       })}
         </ul>
@@ -17,11 +17,21 @@ export const StatisticsList = ({
 
 );
 
-function StatisticItems({id, label, percentage}) {
+function StatisticItems({label, percentage = 0}) {
     return (
-        <li className="item" id={id}>
+        <li className="item">
             <span className="label">{label}</span>
             <span className="percentage">{percentage}%</span>
         </li>
     );
-}
+};
+
+StatisticsList.propTypes = {
+ title: PropTypes.string,
+ data: PropTypes.array,
+};
+
+StatisticItems.propTypes = {
+ label: PropTypes.string.isRequired,
+ percentage: PropTypes.number,
+};
