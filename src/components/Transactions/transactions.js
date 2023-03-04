@@ -1,4 +1,4 @@
-
+import PropTypes from 'prop-types';
 
 export function TransactionHistory({items}) {
     return (
@@ -46,3 +46,16 @@ function TransactionItem({
         </tr>
     );
 };
+
+TransactionHistory.propTypes = {
+    items: PropTypes.arrayOf(PropTypes.object),
+};
+
+TransactionItem.propTypes = {
+    type: PropTypes.string,
+    amount: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
+    ]),
+    currency: PropTypes.string,
+}
