@@ -35,7 +35,9 @@ function FriendListItem({
 };
 
 FriendList.propTypes = {
-    friends: PropTypes.arrayOf(PropTypes.object),
+    friends: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.string.isRequired,
+    })),
 };
 
 FriendListItem.propTypes = {

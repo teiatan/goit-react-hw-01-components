@@ -32,7 +32,10 @@ function StatisticItems({label, percentage = 0}) {
 
 Statistics.propTypes = {
  title: PropTypes.string,
- stats: PropTypes.arrayOf(PropTypes.object).isRequired,
+ stats: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    }),
+),
 };
 
 StatisticItems.propTypes = {
