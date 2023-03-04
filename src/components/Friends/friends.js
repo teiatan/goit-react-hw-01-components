@@ -7,12 +7,14 @@ export function FriendList({friends}) {
                 id, avatar, name, isOnline
             }) => {
                 return (
-                    <FriendListItem 
-                        key = {id}
-                        name = {name}
-                        avatar = {avatar}
-                        isOnline = {isOnline}
-                    />
+                    <li className="item" key = {id}>
+                        <FriendListItem 
+                            name = {name}
+                            avatar = {avatar}
+                            isOnline = {isOnline}
+                        />
+                    </li>
+                    
                 );
             })}
         </ul>
@@ -24,11 +26,11 @@ function FriendListItem({
     name = "Anonymous", 
     isOnline = false}) {
     return (
-        <li className="item">
+        <>
             <span className='status {isOnline}'></span>
             <img className="avatar" src={avatar} alt="User avatar" width="48" />
             <p className="name">{name}</p>
-        </li>
+        </>
     );
 };
 
