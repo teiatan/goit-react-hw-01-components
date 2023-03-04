@@ -2,7 +2,7 @@ import React from 'react';
 import user from '../data/user.json';
 import data from '../data/data.json';
 import { Profile } from './Profile/profile';
-import { StatisticsList } from './Statistics/statistics';
+import { Statistics } from './Statistics/statistics';
 
 export const App = () => {
   return (
@@ -17,12 +17,12 @@ export const App = () => {
         likes={user.stats.likes}
       />
 
-      <StatisticsList 
-        data={data}
+      <Statistics
+        stats={data}
       />
 
 
-      
+
     </>
   );
 };

@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 
-export const StatisticsList = ({
+export const Statistics = ({
     title = "Upload stats",
-    data,
+    stats,
 }) => (
     <section className="statistics">
         <h2 className="title">{title}</h2>
         <ul className="stat-list">
-        {data.map(({ id, label, percentage }) => {
+        {stats.map(({ id, label, percentage }) => {
         return (
           <StatisticItems key={id} label={label} percentage={percentage} />
         );
@@ -26,9 +26,9 @@ function StatisticItems({label, percentage = 0}) {
     );
 };
 
-StatisticsList.propTypes = {
+Statistics.propTypes = {
  title: PropTypes.string,
- data: PropTypes.arrayOf(PropTypes.object),
+ stats: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 StatisticItems.propTypes = {
