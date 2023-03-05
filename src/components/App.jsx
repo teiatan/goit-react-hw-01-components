@@ -7,7 +7,7 @@ import { Section } from './Section/section';
 import { Profile } from './Profile/Profile/profile';
 import { Statistics } from './Statistics/Statistics/statistics';
 import { FriendList } from './Friends/FriendList/FriendList';
-import { TransactionHistory } from './Transactions/transactions';
+import { TransactionHistory } from './Transactions/TransactionHistory/TransactionHistory';
 
 export const App = () => {
   return (
