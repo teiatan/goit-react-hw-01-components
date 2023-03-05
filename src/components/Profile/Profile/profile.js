@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import css from './profile.module.css';
+import { ProfileStats } from '../ProfileStats/ProfileStats';
 
 export function Profile({ 
     username = 'Anonymous', 
@@ -26,29 +27,11 @@ export function Profile({
     );
   };
 
-function ProfileStats({stats}) {
-  return (
-    <ul className={css.stats}>
-        {Object.keys(stats).map((key) => {
-          return (
-              <li key={key} className={css.stats__item}>
-                <span className={css.stats__label}>{key}</span>
-                <span className={css.stats__quantity}>{stats[key]}</span>
-              </li>
-            );
-          })}
-    </ul>
-  );
-};
 
 Profile.propTypes = {
   username: PropTypes.string,
   tag: PropTypes.string,
   location: PropTypes.string,
   avatar: PropTypes.string,
-  stats: PropTypes.object,
-};
-
-ProfileStats.propTypes = {
   stats: PropTypes.object,
 };
