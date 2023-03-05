@@ -1,51 +1,55 @@
 import PropTypes from 'prop-types';
+//import clsx from 'clsx';
+import css from './profile.module.css';
 
 export function Profile({ 
     username = 'Anonymous', 
     tag, 
     location, 
     avatar = 'https://cdn-icons-png.flaticon.com/512/1077/1077012.png',
-    followers = 0,
-    views = 0,
-    likes = 0}) {
+    stats}) {
 
     return (
     <>
-        <div className="description">
+      <div className={css.description}>
         <img
           src={avatar}
           alt="User avatar"
-          className="avatar"
+          className={css.avatar}
         />
-        <p className="name">{username}</p>
-        <p className="tag">@{tag}</p>
-        <p className="location">{location}</p>
+        <p className={css.name}>{username}</p>
+        <p className={css.tag}>@{tag}</p>
+        <p className={css.location}>{location}</p>
       </div>
-    
-      <ul className="stats">
-        <li>
-          <span className="label">Followers</span>
-          <span className="quantity">{followers}</span>
-        </li>
-        <li>
-          <span className="label">Views</span>
-          <span className="quantity">{views}</span>
-        </li>
-        <li>
-          <span className="label">Likes</span>
-          <span className="quantity">{likes}</span>
-        </li>
-      </ul>
+
+      <ProfileStats stats={stats}/>
     </>
     );
   };
 
-  Profile.propTypes = {
-    username: PropTypes.string,
-    tag: PropTypes.string,
-    location: PropTypes.string,
-    avatar: PropTypes.string,
-    followers: PropTypes.number,
-    views: PropTypes.number,
-    likes: PropTypes.number,
-  };
+function ProfileStats({stats}) {
+  return (
+    <ul className={css.stats}>
+        {Object.keys(stats).map((key) => {
+          return (
+              <li key={key} className={css.stats__item}>
+                <span className={css.stats__label}>{key}</span>
+                <span className={css.stats__quantity}>{stats[key]}</span>
+              </li>
+            );
+          })}
+    </ul>
+  );
+};
+
+Profile.propTypes = {
+  username: PropTypes.string,
+  tag: PropTypes.string,
+  location: PropTypes.string,
+  avatar: PropTypes.string,
+  stats: PropTypes.object,
+};
+
+ProfileStats.propTypes = {
+  stats: PropTypes.object,
+};
