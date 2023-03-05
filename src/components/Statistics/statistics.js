@@ -1,14 +1,15 @@
 import PropTypes from 'prop-types';
+import css from './statistics.module.css';
 
 export function Statistics({
     stats,
 }) {
     return (
         <>
-            <ul className="stat-list">
+            <ul className={css.stats}>
             {stats.map(({ id, label, percentage }) => {
             return (
-                <li className="item" key={id}>
+                <li className={css.stats__item} key={id}>
                     <StatisticItems label={label} percentage={percentage} />
                 </li>
             );
@@ -22,8 +23,8 @@ export function Statistics({
 function StatisticItems({label, percentage = 0}) {
     return (
         <>
-            <span className="label">{label}</span>
-            <span className="percentage">{percentage}%</span>
+            <span className={css.stats__label}>{label}</span>
+            <span className={css.stats__percentage}>{percentage}%</span>
         </>
     );
 };

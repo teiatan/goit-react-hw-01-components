@@ -5,7 +5,12 @@
 }
 
 .title {
-    font-size: large;
-    font-weight: 700;
-    color: red;
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    margin: 0;
+    background-color: white;
+    color: darkslategray;
+    text-transform: uppercase;
 }
