@@ -9,14 +9,12 @@ export function FriendList({friends}) {
                 id, avatar, name, isOnline
             }) => {
                 return (
-                    <li className={css.friends__item} key = {id}>
-                        <FriendListItem 
-                            name = {name}
-                            avatar = {avatar}
-                            isOnline = {isOnline}
-                        />
-                    </li>
-                    
+                    <FriendListItem 
+                        key = {id}
+                        name = {name}
+                        avatar = {avatar}
+                        isOnline = {isOnline}
+                    />                 
                 );
             })}
         </ul>
@@ -28,11 +26,11 @@ function FriendListItem({
     name = "Anonymous", 
     isOnline = false}) {
     return (
-        <>
+        <li className={css.friends__item}>
             <span className={clsx(css.friends__status, {[css["is-online"]]:isOnline,})}></span>
             <img className={css.friends__avatar} src={avatar} alt="User avatar" width="48" />
             <p className={css.friends__name}>{name}</p>
-        </>
+        </li>
     );
 };
 
