@@ -7,7 +7,7 @@
 }
 
 .transaction-history__head {
-    background-color: lightgrey;
+    background-color: lightsteelblue;
     text-transform: uppercase;
     color: darkslategrey;
     display: flex;
@@ -16,8 +16,8 @@
     padding-bottom: 10px;
     padding-right: 30px;
     padding-left: 30px;
-    box-shadow: 2px 3px 5px grey;
-    border: 1px solid lightgrey;
+    box-shadow: 2px 3px 5px lightsteelblue;
+    border: 1px solid lightsteelblue;
 
 }
 
@@ -45,6 +45,10 @@
     padding-left: 30px;
     border: 1px solid lightgrey;
 
+}
+
+.transaction-history__item:nth-child(2n) {
+    background-color: lightgrey;
 }
 
 .transaction-history__type {

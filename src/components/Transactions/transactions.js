@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import clsx from 'clsx';
 import css from './transactions.module.css';
 
 
