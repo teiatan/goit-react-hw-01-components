@@ -10,7 +10,7 @@ export function Profile({
     likes = 0}) {
 
     return (
-    <section className="profile">
+    <>
         <div className="description">
         <img
           src={avatar}
@@ -36,7 +36,7 @@ export function Profile({
           <span className="quantity">{likes}</span>
         </li>
       </ul>
-    </section>
+    </>
     );
   };
 
