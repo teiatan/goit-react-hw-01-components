@@ -9,11 +9,8 @@ export function Statistics({
         <>
             <ul className={css.stats}>
             {stats.map(({ id, label, percentage }) => {
-            const randomBackgroundColor = {
-                backgroundColor: getRandomHexColor(),
-            };
             return (
-                <li className={css.stats__item} key={id} style={randomBackgroundColor}>
+                <li className={css.stats__item} key={id} style={{backgroundColor: getRandomHexColor()}}>
                     <StatisticItems label={label} percentage={percentage} />
                 </li>
             );
