@@ -1,33 +1,34 @@
 import PropTypes from 'prop-types';
+import css from './transactions.module.css';
 
 export function TransactionHistory({items}) {
     return (
-        <table className="transaction-history">
-        <thead>
-            <tr>
-            <th>Type</th>
-            <th>Amount</th>
-            <th>Currency</th>
-            </tr>
-        </thead>
-            
-        <tbody>
-            {items.map(({
-                    id,
-                    type,
-                    amount,
-                    currency,
-                }) => {
-                    return (
-                        <TransactionItem
-                            key = {id}
-                            type = {type}
-                            amount = {amount}
-                            currency = {currency}
-                        />
-                    );
-                })}
-        </tbody>
+        <table className={css["transaction-history"]}>
+            <thead className={css["transaction-history__head"]}>
+                <tr className={css["transaction-history__head-items"]}>
+                <th>Type</th>
+                <th>Amount</th>
+                <th>Currency</th>
+                </tr>
+            </thead>
+                
+            <tbody className={css["transaction-history__body"]}>
+                {items.map(({
+                        id,
+                        type,
+                        amount,
+                        currency,
+                    }) => {
+                        return (
+                            <TransactionItem
+                                key = {id}
+                                type = {type}
+                                amount = {amount}
+                                currency = {currency}
+                            />
+                        );
+                    })}
+            </tbody>
         </table>
     );
 
@@ -39,9 +40,9 @@ function TransactionItem({
     currency,
 }) {
     return (
-        <tr>
-            <td>{type}</td>
-            <td>{amount}</td>
+        <tr className={css["transaction-history__item"]}>
+            <td className={css["transaction-history__type"]}>{type}</td>
+            <td className={css["transaction-history__amount"]}>{amount}</td>
             <td>{currency}</td>
         </tr>
     );
