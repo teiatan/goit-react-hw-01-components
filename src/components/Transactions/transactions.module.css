@@ -7,9 +7,9 @@
 }
 
 .transaction-history__head {
-    background-color: lightsteelblue;
+    background-color: rgb(20, 150, 144);
     text-transform: uppercase;
-    color: darkslategrey;
+    color: white;
     display: flex;
     justify-content: space-between;
     padding-top: 10px;
@@ -31,8 +31,8 @@
     display: flex;
     flex-direction: column;
     background-color: white;
-    border: 1px solid lightgrey;
-    box-shadow: 2px 3px 5px lightgrey;
+    
+    box-shadow: 2px 3px 5px rgb(220, 240, 244);
     
 }
 
@@ -43,12 +43,12 @@
     padding-bottom: 10px;
     padding-right: 30px;
     padding-left: 30px;
-    border: 1px solid lightgrey;
+    border: 1px solid rgb(220, 240, 244);
 
 }
 
 .transaction-history__item:nth-child(2n) {
-    background-color: lightgrey;
+    background-color: rgb(220, 240, 244);
 }
 
 .transaction-history__type {
