@@ -6,27 +6,23 @@ export function Statistics({
     stats,
 }) {
     return (
-        <>
             <ul className={css.stats}>
-            {stats.map(({ id, label, percentage }) => {
-            return (
-                <li className={css.stats__item} key={id} style={{backgroundColor: getRandomHexColor()}}>
-                    <StatisticItems label={label} percentage={percentage} />
-                </li>
-            );
-          })}
+                {stats.map(({ id, label, percentage }) => {
+                    return (
+                        <StatisticItems key={id} label={label} percentage={percentage} />
+                    );
+                })}
             </ul>
-        </>
     );
 
 }; 
 
 function StatisticItems({label, percentage = 0}) {
     return (
-        <>
+        <li className={css.stats__item} style={{backgroundColor: getRandomHexColor()}}>
             <span className={css.stats__label}>{label}</span>
             <span className={css.stats__percentage}>{percentage}%</span>
-        </>
+        </li>
     );
 };
 
