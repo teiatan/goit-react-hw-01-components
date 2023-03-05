@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
+import clsx from 'clsx';
 import css from './transactions.module.css';
+
 
 export function TransactionHistory({items}) {
     return (
@@ -43,7 +45,7 @@ function TransactionItem({
         <tr className={css["transaction-history__item"]}>
             <td className={css["transaction-history__type"]}>{type}</td>
             <td className={css["transaction-history__amount"]}>{amount}</td>
-            <td>{currency}</td>
+            <td className={css["transaction-history__currency"]}>{currency}</td>
         </tr>
     );
 };
